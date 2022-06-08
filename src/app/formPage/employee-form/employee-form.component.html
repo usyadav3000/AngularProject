@@ -1,0 +1,21 @@
+
+
+<h1>Employee Form Page</h1>
+<div>
+    <form #f="ngForm" (ngSubmit)="savaData(f)">  
+        <input type="text" placeholder="userName" name="userName" [(ngModel)]="usr.userName">
+        
+        <input type="password" placeholder="password" name="password"  [(ngModel)]="usr.password">
+        
+        <input type="text" placeholder="email" name="email"  [(ngModel)]="usr.email">
+         <div *ngIf="msg" style="color:red;">
+          <h2>
+            <strong>Registration Success!</strong> Please click here to login!.
+          </h2>
+         </div>
+        <button type="submit" class="btn btn-success">Submit</button>  
+        <button type="submit" class="btn btn-primary" (click)="onLoadPage()">exit</button>
+        
+      </form> 
+      <!-- <button type="submit" class="btn btn-success"><a routerLink="list">Exit</a></button> -->
+</div>

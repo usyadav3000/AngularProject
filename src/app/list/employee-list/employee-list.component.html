@@ -1,0 +1,49 @@
+<style>
+      #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 40px 0px;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+
+<table id="customers">
+    <tr>
+        <th>S.No.</th>
+        <th>userName</th>
+        <th>email</th>
+        <th>date</th>
+        <th>deleteUser</th>
+        <th>Edit</th>
+
+    </tr>
+    <tr *ngFor="let user of resData1; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.date}}</td> 
+        <td><i (click)="deleteUser((i+1),user.userName)" class="fa fa-trash" style="font-size:20px;color:red;cursor: pointer;"></i>
+        <td><i (click)="update_form(i,user.userName)" class="fa fa-edit" style="font-size:20px;color:rgb(46, 15, 223);cursor: pointer;"></i>
+        </td>
+        
+    </tr>
+</table>
+<!-- <router-outlet></router-outlet> -->
+
+
